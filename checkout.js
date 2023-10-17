@@ -1,8 +1,10 @@
+let loader = $(".loader");
 $("#submit").click(function () {
   let name = $("#name");
   let lastName = $("#last_name");
   let type = $("#type");
   let hasError = false;
+  loader.css("display", "flex");
 
   $(".error-input").hide();
 
@@ -26,7 +28,12 @@ $("#submit").click(function () {
       data: { name: name.val(), last_name: lastName.val(), type: type.val() }
     })
         .done(function( msg ) {
-          console.log(msg);
+          loader.hide();
+          if (msg.success) {
+            alert("Заказ создан");
+          } else {
+            alert("Заказ не создан");
+          }
         });
   }
 })
