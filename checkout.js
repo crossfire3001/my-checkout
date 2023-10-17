@@ -2,19 +2,20 @@ $("#submit").click(function () {
   let name = $("#name");
   let lastName = $("#last_name");
   let type = $("#type");
+  let hasError = false;
 
   $(".error-input").hide();
 
   if (!name.val()) {
     name.next().show();
-    return;
+    hasError = true;
   }
   if (!lastName.val()) {
     lastName.next().show();
-    return;
+    hasError = true;
   }
   if (!type.val()) {
     type.next().show();
-    return;
+    hasError = true;
   }
 })
