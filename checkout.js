@@ -18,4 +18,8 @@ $("#submit").click(function () {
     type.next().show();
     hasError = true;
   }
+
+  if (!hasError) {
+    // ajax
+  }
 })
