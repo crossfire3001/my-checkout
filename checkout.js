@@ -20,6 +20,13 @@ $("#submit").click(function () {
   }
 
   if (!hasError) {
-    // ajax
+    $.ajax({
+      method: "POST",
+      url: "http://testologia.site/checkout",
+      data: { name: name.val(), last_name: lastName.val(), type: type.val() }
+    })
+        .done(function( msg ) {
+          console.log(msg);
+        });
   }
 })
