@@ -7,4 +7,12 @@ $("#submit").click(function () {
     name.next().show();
     return;
   }
+  if (!lastName.val()) {
+    lastName.next().show();
+    return;
+  }
+  if (!type.val()) {
+    type.next().show();
+    return;
+  }
 })
